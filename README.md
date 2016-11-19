@@ -1,5 +1,8 @@
 # ZeroBadge
-Info and soft for ZeroNights 0x7E0 badge
+Info and soft for ZeroNights 0x7E0 badge.
+
+## Hardware
+Board is exactly the same as Teensy 2.0 and uses atmega32u4 MCU.
 
 ## USB device
 
