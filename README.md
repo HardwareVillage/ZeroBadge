@@ -31,7 +31,7 @@ Install dependencies:
 brew install dfu-programmer avrdude
 ```
 
-Flash board with blink led example, downloaded from https://pjrc.com/
+Flash board with blink [led example](https://www.pjrc.com/teensy/blink_both.zip)
 ```
 sudo dfu-programmer atmega32u4 erase --debug 5
 sudo dfu-programmer atmega32u4 flash --debug 5 ~/Downloads/blink_both/blink_fast_Teensy2.hex
