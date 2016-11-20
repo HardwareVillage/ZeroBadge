@@ -19,24 +19,24 @@ Bus 250 Device 006: ID 03eb:2ff4 Atmel Corporation ATm32U4DFU  Serial: 1.0.0
 
 ## Pinout
 
-Pinout for from front view
+Pinout differs from original Teensy 2.0:
 
 |   |   |   |   |   |   |   |   |
 |---|---|---|---|---|---|---|---|
-|   |   |   |VCC|PF0|   |   |   |
-|   |   |   |GND|PF1|   |   |   |
-|   |   |   |AREF|PF4|   |   |   |
-|   |   |   |PE6|PF5|   |   |   |
-|   |   |   |PB0|PF6|   |   |   |
-|   |   |   |PB1|PF7|   |   |   |
-|   |   |   |PB2|PC7|   |   |   |
-|   |   |   |PB3|PC6|   |   |   |
-|   |   |   |PB7|PB6|   |   |   |
-|   |   |   |PD0|PB5|   |   |   |
-|   |   |   |PD1|PB4|   |   |   |
-|   |   |   |PD2|PD7|   |   |   |
-|   |   |   |PD3|PD6|   |   |   |
-|   |   |   |PD5|PD4|   |   |   |
+|   |   |   |VCC|PF0|ADC0|   |   |
+|   |   |   |GND|PF1|ADC1|   |   |
+|   |   |   |AREF|PF4|ADC4|   |   |
+|   |   |   |PE6|PF5|ADC5|   |   |
+|   |   |SS|PB0|PF6|ADC6|   |   |
+|   |   |SCLK|PB1|PF7|ADC7|   |   |
+|   |   |MOSI|PB2|PC7|ICP3|OC4A|   |
+|   |   |MISO|PB3|PC6|OC3A|OC4A|   |
+|RTS|OC1C|OC0A|PB7|PB6|ADC13|OC1B|OC4B|
+|OC0B|SCL|INT0|PD0|PB5|ADC12|OC1A|OC4B|
+|   |SDA|INT1|PD1|PB4|ADC11|   |   |
+|   |RXD1|INT2|PD2|PD7|ADC10|T0|OC4D|
+|   |TXD1|INT3|PD3|PD6|ADC9|T1|OC4D|
+|   |CTS|XCK1|PD5|PD4|ADC8|ICP1|   |
 
 ## Checking HlfKay
 
