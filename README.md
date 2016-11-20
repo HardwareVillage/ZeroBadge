@@ -4,7 +4,7 @@ Info and soft for ZeroNights 0x7E0 badge.
 ## Hardware
 Board is exactly the same as Teensy 2.0 and uses atmega32u4 MCU.
 
-## USB device
+## USB device info
 
 Initial state - led slowly blinks
 ```
@@ -18,24 +18,24 @@ Bus 250 Device 006: ID 03eb:2ff4 Atmel Corporation ATm32U4DFU  Serial: 1.0.0
 
 ## Pinout
 
-Pinout differs from original Teensy 2.0:
+Pinout for the board (NEEDS checking)
 
-|   |   |   |XX1|XX2|   |   |   |
-|---|---|---|---|---|---|---|---|
-|   |   |   |VCC|PF0|ADC0|   |   |
-|   |   |   |GND|PF1|ADC1|   |   |
-|   |   |   |AREF|PF4|ADC4|   |   |
-|   |   |   |PE6|PF5|ADC5|   |   |
-|   |   |SS|PB0|PF6|ADC6|   |   |
-|   |   |SCLK|PB1|PF7|ADC7|   |   |
-|   |   |MOSI|PB2|PC7|ICP3|OC4A|   |
-|   |   |MISO|PB3|PC6|OC3A|OC4A|   |
-|RTS|OC1C|OC0A|PB7|PB6|ADC13|OC1B|OC4B|
-|OC0B|SCL|INT0|PD0|PB5|ADC12|OC1A|OC4B|
-|   |SDA|INT1|PD1|PB4|ADC11|   |   |
-|   |RXD1|INT2|PD2|PD7|ADC10|T0|OC4D|
-|   |TXD1|INT3|PD3|PD6|ADC9|T1|OC4D|
-|   |CTS|XCK1|PD5|PD4|ADC8|ICP1|   |
+|PIN|   |   |   |XX1|XX2|   |   |   |PIN|
+|---|---|---|---|---|---|---|---|---|---|
+|   |   |   |   |VCC | PF0|ADC0|  |   | 41|
+|   |   |   |   |GND | PF1|ADC1|  |   | 40|
+|42 |   |   |   |AREF| PF4|TCK|ADC4| | 39|
+|01 |   |   |   |PE6 | PF5|TMS|ADC5| | 38|
+|08 |   |PCINT0|SS |PB0 | PF6|TDO|ADC6| | 37|
+|09 |   |PCINT1|SCLK|PB1| PF7|TDI|ADC7| | 36|
+|10 |PCINT2|PDI|MOSI|PB2|PC7|ICP3|OC4A|13|
+|11 |   |PDO|MISO|PB3|PC6|OC3A|OC4A||05|
+|12 |RTS|OC1C|OC0A|PB7|PB6|ADC13|OC1B|OC4B| 30|
+|18 |OC0B|SCL|INT0|PD0|PB5|ADC12|OC1A|OC4B| 29
+|19 |   |SDA|INT1|PD1|PB4|ADC11|   |   | 28|
+|20 |   |RXD1|INT2|PD2|PD7|ADC10|T0|OC4D| 27|
+|21 |   |TXD1|INT3|PD3|PD6|ADC9|T1|OC4D| 26|
+|22 |   |CTS|XCK1|PD5|PD4|ADC8|ICP1|   | 25|
 
 ## Flash bootloader
 
@@ -48,10 +48,10 @@ Connection scheme:
 |---|---|
 |GND|GND|
 |5/3.3V|VCC|
-|CS|RESET|
-|MOSI|MOSI|
-|MISO|MISO|
-|SCLK/CLK|SCK|
+|CS|RESET (RESET button)|
+|MOSI|MOSI (PB2)|
+|MISO|MISO (PB3)|
+|SCLK/CLK|SCK (PB1)|
 
 Checking fuses
 ```
@@ -60,6 +60,24 @@ avrdude -C/Arduino.app/Contents/Java/hardware/tools/avr/etc/avrdude.conf -v -pat
 
 After that choose "Arduino Leonardo" board in Arduino IDE settings and flash bootloader via ICSP programming.
 
+USB VID:PID after bootloader updating
+```
+Bus 250 Device 006: ID 2341:8036 2341 Arduino Leonardo
+```
+
+## NRF24L01+ SPI connection
+
+Connect NRF24L01+ to ZeroNights badge via SPI.
+
+|ZeroNights badge|NRF24L01|
+|---|---|
+|GND|GND|
+|VCC|VCC|
+|SS(PB0)|CSN|
+|MOSI(PB2)|MOSI|
+|MISO(PB3)|MISO|
+|SCLK(PB1)|SCK|
+|CE(PD5)|CE|
 
 ## Checking HlfKay
 
