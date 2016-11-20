@@ -16,6 +16,33 @@ DFU mode after reset button pressed
 Bus 250 Device 006: ID 03eb:2ff4 Atmel Corporation ATm32U4DFU  Serial: 1.0.0
 ```
 
+
+## Pinout
+
+Pinout for from front view
+
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |VCC|PF0|   |   |   |
+|   |   |   |GND|PF1|   |   |   |
+|   |   |   |AREF|PF4|   |   |   |
+|   |   |   |PE6|PF5|   |   |   |
+|   |   |   |PB0|PF6|   |   |   |
+|   |   |   |PB1|PF7|   |   |   |
+|   |   |   |PB2|PC7|   |   |   |
+|   |   |   |PB3|PC6|   |   |   |
+|   |   |   |PB7|PB6|   |   |   |
+|   |   |   |PD0|PB5|   |   |   |
+|   |   |   |PD1|PB4|   |   |   |
+|   |   |   |PD2|PD7|   |   |   |
+|   |   |   |PD3|PD6|   |   |   |
+|   |   |   |PD5|PD4|   |   |   |
+
+## Checking HlfKay
+
+The HalfKay is shown as "Composite Device". When it is selected, the lower right panel will show its properites. You should see 0x0478 and 0x16c0 as the Product and Vendor ID.
+
+
 ## MAC OS X
 
 First of all install Teensyduino from pjrc.com
