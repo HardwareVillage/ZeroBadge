@@ -21,7 +21,7 @@ Bus 250 Device 006: ID 03eb:2ff4 Atmel Corporation ATm32U4DFU  Serial: 1.0.0
 
 Pinout differs from original Teensy 2.0:
 
-|   |   |   |   |   |   |   |   |
+|   |   |   |PIN|PIN|   |   |   |
 |---|---|---|---|---|---|---|---|
 |   |   |   |VCC|PF0|ADC0|   |   |
 |   |   |   |GND|PF1|ADC1|   |   |
