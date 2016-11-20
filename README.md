@@ -57,7 +57,9 @@ Checking fuses
 ```
 avrdude -C/Arduino.app/Contents/Java/hardware/tools/avr/etc/avrdude.conf -v -patmega32u4 -cbuspirate -P/dev/cu.usbserial-A603PKTL -e -Ulock:w:0x3F:m -Uefuse:w:0xcb:m -Uhfuse:w:0xd8:m -Ulfuse:w:0xff:m
 ```
-After that
+
+After that choose "Arduino Leonardo" board in Arduino IDE settings and flash bootloader via ICSP programming.
+
 
 ## Checking HlfKay
 
