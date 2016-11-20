@@ -16,12 +16,11 @@ DFU mode after reset button pressed
 Bus 250 Device 006: ID 03eb:2ff4 Atmel Corporation ATm32U4DFU  Serial: 1.0.0
 ```
 
-
 ## Pinout
 
 Pinout differs from original Teensy 2.0:
 
-|   |   |   |PIN|PIN|   |   |   |
+|   |   |   |XX1|XX2|   |   |   |
 |---|---|---|---|---|---|---|---|
 |   |   |   |VCC|PF0|ADC0|   |   |
 |   |   |   |GND|PF1|ADC1|   |   |
@@ -38,13 +37,27 @@ Pinout differs from original Teensy 2.0:
 |   |TXD1|INT3|PD3|PD6|ADC9|T1|OC4D|
 |   |CTS|XCK1|PD5|PD4|ADC8|ICP1|   |
 
-## Flash correct bootloader
+## Flash bootloader
 
 Device doesn't support Arduino IDE by default because of default bootloader. First of all you should check fuses and flash correct version of bootloader. Use Bus Pirate or USBASP for flashing.
+We have used BusPirate 3.6 for this.
+
+Connection scheme:
+
+|BusPirate|ZeroNights badge|
+|---|---|
+|GND|GND|
+|5/3.3V|VCC|
+|CS|RESET|
+|MOSI|MOSI|
+|MISO|MISO|
+|SCLK/CLK|SCK|
+
+Checking fuses
 ```
 avrdude -C/Arduino.app/Contents/Java/hardware/tools/avr/etc/avrdude.conf -v -patmega32u4 -cbuspirate -P/dev/cu.usbserial-A603PKTL -e -Ulock:w:0x3F:m -Uefuse:w:0xcb:m -Uhfuse:w:0xd8:m -Ulfuse:w:0xff:m
 ```
-
+After that
 
 ## Checking HlfKay
 
