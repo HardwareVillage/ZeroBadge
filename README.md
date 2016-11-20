@@ -38,6 +38,14 @@ Pinout differs from original Teensy 2.0:
 |   |TXD1|INT3|PD3|PD6|ADC9|T1|OC4D|
 |   |CTS|XCK1|PD5|PD4|ADC8|ICP1|   |
 
+## Flash correct bootloader
+
+Device doesn't support Arduino IDE by default because of default bootloader. First of all you should check fuses and flash correct version of bootloader. Use Bus Pirate or USBASP for flashing.
+```
+avrdude -C/Arduino.app/Contents/Java/hardware/tools/avr/etc/avrdude.conf -v -patmega32u4 -cbuspirate -P/dev/cu.usbserial-A603PKTL -e -Ulock:w:0x3F:m -Uefuse:w:0xcb:m -Uhfuse:w:0xd8:m -Ulfuse:w:0xff:m
+```
+
+
 ## Checking HlfKay
 
 The HalfKay is shown as "Composite Device". When it is selected, the lower right panel will show its properites. You should see 0x0478 and 0x16c0 as the Product and Vendor ID.
